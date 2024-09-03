@@ -1,3 +1,11 @@
+:root {
+  --main-color: #f8f8f8;
+  --main-red: #ff6363;
+  --black: #080808;
+  --contrast-yellow: #f5d061;
+  --contrast-red: #ae0000;
+}
+
 *,
 ::before,
 ::after {
@@ -5,5 +13,9 @@
 }
 
 body {
+  margin: 0;
+}
+
+h1 {
   margin: 0;
 }
