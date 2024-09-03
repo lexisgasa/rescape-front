@@ -10,7 +10,7 @@ export default defineConfig({
     setupFiles: ["./src/setupTests.ts"],
     environment: "jsdom",
     coverage: {
-      include: ["src/**/*.tsx"],
+      include: ["src/**/*.test.tsx"],
       exclude: ["src/main.tsx"],
     },
   },
