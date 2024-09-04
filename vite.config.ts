@@ -10,8 +10,9 @@ export default defineConfig({
     setupFiles: ["./src/setupTests.ts"],
     environment: "jsdom",
     coverage: {
-      include: ["src/**/*.test.tsx"],
+      include: ["src/**/*.ts", "src/**/*.tsx"],
       exclude: ["src/main.tsx"],
+      reporter: ["text", "json", "lcov"],
     },
   },
 });
