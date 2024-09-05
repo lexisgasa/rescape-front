@@ -7,4 +7,6 @@
 .header__title {
   color: var(--main-red);
   font-size: 32px;
+  border-bottom: 1px solid var(--main-red);
+  text-shadow: 2px 2px 8px;
 }
