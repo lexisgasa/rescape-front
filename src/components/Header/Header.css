@@ -1,3 +1,9 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .header__title {
   color: var(--main-red);
   font-size: 32px;
