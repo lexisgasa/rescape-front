@@ -9,6 +9,7 @@ describe("Given the component EscapeRoomListPage", () => {
         escapeRoomListPageTitleText,
         "i",
       );
+
       render(<EscapeRoomListPage />);
 
       const escapeRoomListPageTitle = screen.getByRole("heading", {
