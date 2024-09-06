@@ -1,9 +1,9 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
-import "./NavMenu.css";
 import { useState } from "react";
+import "./NavMenu.css";
 
-const NavMenu = () => {
+const NavMenu = (): React.ReactElement => {
   const [isHamburger, setIsHamburger] = useState(true);
 
   const toggleMenu = (): void => {
