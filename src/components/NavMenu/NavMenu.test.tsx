@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import NavMenu from "./NavMenu";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 
 describe("Given the NavMenu component", () => {
   describe("When it is rendered", () => {
@@ -25,7 +26,11 @@ describe("Given the NavMenu component", () => {
       const listLinkText = "Listado";
       const createLinkTest = "Añadir";
 
-      render(<NavMenu />);
+      render(
+        <MemoryRouter>
+          <NavMenu />
+        </MemoryRouter>,
+      );
 
       const NavMenuButton = screen.getByRole("button", {
         name: buttonAccesibleNameRegex,
