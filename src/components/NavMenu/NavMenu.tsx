@@ -2,6 +2,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import "./NavMenu.css";
+import { NavLink } from "react-router-dom";
 
 const NavMenu = (): React.ReactElement => {
   const [isHamburger, setIsHamburger] = useState(true);
@@ -19,17 +20,27 @@ const NavMenu = (): React.ReactElement => {
           <RxHamburgerMenu className="hamburger" />
         </button>
       ) : (
-        <ul className="navigation-links">
-          <li className="navigation-links__link--active">
-            <a href="/listado">Listado</a>
-          </li>
-          <li>
-            <a href="/crear-escape">Añadir</a>
-          </li>
+        <nav className="navigation-links">
+          <NavLink
+            to={"/listado"}
+            className={({ isActive }) =>
+              `navigation-links__link ${isActive ? "navigation-links__link--active" : ""}`
+            }
+          >
+            Listado
+          </NavLink>
+          <NavLink
+            to={"/crear-escape"}
+            className={({ isActive }) =>
+              `navigation-links__link ${isActive ? "navigation-links__link--active" : ""}`
+            }
+          >
+            Añadir
+          </NavLink>
           <button className="navigation-links__button" onClick={toggleMenu}>
             <IoCloseOutline />
           </button>
-        </ul>
+        </nav>
       )}
     </nav>
   );
