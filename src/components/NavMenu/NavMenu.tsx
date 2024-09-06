@@ -15,7 +15,7 @@ const NavMenu = () => {
   return (
     <nav>
       {isHamburger ? (
-        <button onClick={toggleMenu}>
+        <button aria-label="Show navigation links" onClick={toggleMenu}>
           <RxHamburgerMenu className="hamburger" />
         </button>
       ) : (
