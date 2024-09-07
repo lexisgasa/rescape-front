@@ -17,7 +17,6 @@ describe("Given the component NotFoundPage", () => {
         name: NotFoundPageHeadingTextRegex,
       });
 
-      screen.debug();
       expect(NotFoundPageHeading).toBeInTheDocument();
     });
 

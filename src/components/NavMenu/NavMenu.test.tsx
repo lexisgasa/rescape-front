@@ -39,8 +39,6 @@ describe("Given the NavMenu component", () => {
       const user = userEvent.setup();
       await user.click(NavMenuButton);
 
-      screen.debug();
-
       const listLink = screen.getByRole("link", { name: listLinkText });
       const createLink = screen.getByRole("link", { name: createLinkTest });
 
