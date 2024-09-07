@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import App from "../App/App";
-import EscapeRoomListPage from "../escapeRoom/pages/EscapeRoomListPage";
+import EscapeRoomListPage from "../escapeRoom/pages/EscapeRoomListPage/EscapeRoomListPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
 const router = createBrowserRouter(
