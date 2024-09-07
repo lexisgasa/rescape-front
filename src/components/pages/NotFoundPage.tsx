@@ -5,14 +5,13 @@ const NotFoundPage = (): React.ReactElement => {
     <div className="notfound-container">
       <img
         src="media/404-escape.webp"
-        alt="Imagen mostrando 404 escape"
+        alt="Imagen 404 escape"
         width={200}
         height={192}
       />
-      <h2 className="subtitle">
+      <h2 className="subtitle notfound-container__subtitle">
         Oops.. la página a la que intentas acceder no existe
       </h2>
-      ;
     </div>
   );
 };

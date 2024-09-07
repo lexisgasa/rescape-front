@@ -3,3 +3,7 @@
   flex-direction: column;
   align-items: center;
 }
+
+.notfound-container__subtitle {
+  text-align: center;
+}
