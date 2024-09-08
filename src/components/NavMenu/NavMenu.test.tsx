@@ -25,6 +25,7 @@ describe("Given the NavMenu component", () => {
       const buttonAccesibleNameRegex = new RegExp(buttonAccessibleName, "i");
       const listLinkText = "Listado";
       const createLinkTest = "Añadir";
+      const user = userEvent.setup();
 
       render(
         <MemoryRouter>
@@ -36,7 +37,6 @@ describe("Given the NavMenu component", () => {
         name: buttonAccesibleNameRegex,
       });
 
-      const user = userEvent.setup();
       await user.click(NavMenuButton);
 
       const listLink = screen.getByRole("link", { name: listLinkText });
