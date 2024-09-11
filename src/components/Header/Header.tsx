@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = (): React.ReactElement => {
   return (
     <div className="header">
-      <h1 className="header__title">RE:Scape</h1>
+      <span className="header__title">RE:Scape</span>
       <NavMenu />
     </div>
   );
