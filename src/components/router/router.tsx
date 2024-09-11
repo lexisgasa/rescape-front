@@ -5,9 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 import App from "../App/App";
-import EscapeRoomListPage from "../escapeRoom/pages/EscapeRoomListPage/EscapeRoomListPage";
+import EscapeRoomListPage from "../../escapeRoom/pages/EscapeRoomListPage/EscapeRoomListPage";
 import NotFoundPage from "../pages/NotFoundPage";
-import EscapeRoomFormPage from "../escapeRoom/pages/EscapeRoomFormPage/EscapeRoomFormPage";
+import EscapeRoomFormPage from "../../escapeRoom/pages/EscapeRoomFormPage/EscapeRoomFormPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
