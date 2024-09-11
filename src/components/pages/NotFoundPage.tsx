@@ -2,7 +2,7 @@ import "./NotFoundPage.css";
 
 const NotFoundPage = (): React.ReactElement => {
   return (
-    <div className="notfound-container">
+    <main className="notfound-container">
       <img
         src="media/404-escape.webp"
         alt="Imagen 404 escape"
@@ -12,7 +12,7 @@ const NotFoundPage = (): React.ReactElement => {
       <h1 className="main-title notfound-container__subtitle">
         Oops.. la página a la que intentas acceder no existe
       </h1>
-    </div>
+    </main>
   );
 };
 
