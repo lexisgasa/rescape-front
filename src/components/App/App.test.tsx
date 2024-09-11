@@ -5,7 +5,7 @@ import router from "../router/router";
 
 describe("Given the App component", () => {
   describe("When it is rendered", () => {
-    test("Then the user should be redirected to the path '/listado' and show 'Listado de escape rooms' in a heading", async () => {
+    test("Then it should show 'Listado de escape rooms' in a heading", async () => {
       render(<RouterProvider router={router} />);
 
       const title = screen.getByRole("heading", {
@@ -14,39 +14,39 @@ describe("Given the App component", () => {
 
       expect(title).toBeInTheDocument();
     });
+  });
 
-    describe("When the user clicks the hamburger menu and then clicks in 'Añadir'", () => {
-      test("Then it should be redirected to the path 'crear-escape' and show 'Crear escape room' in a heading", async () => {
-        const buttonAccessibleName = "Show navigation links";
-        const buttonAccesibleNameRegex = new RegExp(buttonAccessibleName, "i");
-        const createLinkTest = "Añadir";
-        const EscapeRoomFormPageTitleText = "Crear escape room";
-        const EscapeRoomFormPageTitleTextRegex = new RegExp(
-          EscapeRoomFormPageTitleText,
-          "i",
-        );
-        const user = userEvent.setup();
+  describe("When the user clicks the hamburger menu and then clicks in 'Añadir'", () => {
+    test("Then it should show 'Crear escape room' in a heading", async () => {
+      const buttonAccessibleName = "Show navigation links";
+      const buttonAccesibleNameRegex = new RegExp(buttonAccessibleName, "i");
+      const createLinkTest = "Añadir";
+      const escapeRoomFormPageTitleText = "Crear escape room";
+      const escapeRoomFormPageTitleTextRegex = new RegExp(
+        escapeRoomFormPageTitleText,
+        "i",
+      );
+      const user = userEvent.setup();
 
-        render(<RouterProvider router={router} />);
+      render(<RouterProvider router={router} />);
 
-        const NavMenuButton = screen.getByRole("button", {
-          name: buttonAccesibleNameRegex,
-        });
-
-        await user.click(NavMenuButton);
-
-        const createLink = screen.getByRole("link", {
-          name: createLinkTest,
-        });
-
-        await user.click(createLink);
-
-        const EscapeRoomFormPageTitle = screen.getByRole("heading", {
-          name: EscapeRoomFormPageTitleTextRegex,
-        });
-
-        expect(EscapeRoomFormPageTitle).toBeInTheDocument();
+      const navMenuButton = screen.getByRole("button", {
+        name: buttonAccesibleNameRegex,
       });
+
+      await user.click(navMenuButton);
+
+      const createLink = screen.getByRole("link", {
+        name: createLinkTest,
+      });
+
+      await user.click(createLink);
+
+      const escapeRoomFormPageTitle = screen.getByRole("heading", {
+        name: escapeRoomFormPageTitleTextRegex,
+      });
+
+      expect(escapeRoomFormPageTitle).toBeInTheDocument();
     });
   });
 });
