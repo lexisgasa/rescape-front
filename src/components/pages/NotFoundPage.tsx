@@ -9,9 +9,9 @@ const NotFoundPage = (): React.ReactElement => {
         width={200}
         height={192}
       />
-      <h2 className="subtitle notfound-container__subtitle">
+      <h1 className="main-title notfound-container__subtitle">
         Oops.. la página a la que intentas acceder no existe
-      </h2>
+      </h1>
     </div>
   );
 };
