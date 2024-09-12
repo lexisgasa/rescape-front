@@ -1,4 +1,4 @@
-import { EscapeRoomClient } from "../../api/escapeRoomClient";
+import { EscapeRoomClient } from "../../api/EscapeRoomClient";
 
 const EscapeRoomListPage = (): React.ReactElement => {
   const escapeRoomClient = new EscapeRoomClient();
