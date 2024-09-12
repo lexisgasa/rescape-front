@@ -1,4 +1,10 @@
+import { EscapeRoomClient } from "../../api/EscapeRoomClient";
+
 const EscapeRoomListPage = (): React.ReactElement => {
+  const escapeRoomClient = new EscapeRoomClient();
+
+  escapeRoomClient.getEscapeRooms();
+
   return (
     <main>
       <h1 className="main-title">Listado de escape rooms</h1>;
