@@ -56,6 +56,16 @@ button {
   background-color: transparent;
 }
 
+p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+span {
+  font-size: 0.75rem;
+  font-weight: 200;
+}
+
 .main-title {
   color: var(--main-color);
   font-size: 1.5rem;
