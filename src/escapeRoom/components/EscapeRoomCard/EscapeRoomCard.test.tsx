@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import EscapeRoomCard from "./EscapeRoomCard";
-import { EscapeRoom } from "../types";
+import { EscapeRoom } from "../../types";
 
 describe("Given the component EscapeRoomCard", () => {
   describe("When it receives an escape room with the title 'Outline'", () => {

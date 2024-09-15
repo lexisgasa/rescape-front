@@ -1,7 +1,7 @@
 import { EscapeRoomClient } from "../../api/EscapeRoomClient";
 import useAppStore from "../../../store/useAppStore";
 import { useEffect, useMemo } from "react";
-import EscapeRoomCard from "../../components/EscapeRoomCard";
+import EscapeRoomList from "../../components/EscapeRoomList/EscapeRoomList";
 import "./EscapeRoomListPage.css";
 
 const EscapeRoomListPage = (): React.ReactElement => {
@@ -33,7 +33,7 @@ const EscapeRoomListPage = (): React.ReactElement => {
       {isLoading ? (
         <h2>Cargando contenido..</h2>
       ) : (
-        escapeRooms.length > 0 && <EscapeRoomCard escapeRoom={escapeRooms[0]} />
+        escapeRooms.length > 0 && <EscapeRoomList escapeRooms={escapeRooms} />
       )}
     </main>
   );
