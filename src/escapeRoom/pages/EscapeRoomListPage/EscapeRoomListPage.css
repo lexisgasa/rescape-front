@@ -1,0 +1,17 @@
+.main-title {
+  margin-bottom: 30px;
+}
+
+.card {
+  color: var(--main-color);
+  display: flex;
+}
+.card__button {
+  font-size: 22px;
+  align-self: flex-start;
+}
+
+.garbage-can {
+  color: var(--main-color);
+  height: 32px;
+}

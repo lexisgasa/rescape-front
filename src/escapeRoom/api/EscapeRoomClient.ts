@@ -1,4 +1,4 @@
-import { EscapeRoom, EscapeRoomDto } from "../types";
+import { EscapeRoom, EscapeRoomApi } from "../types";
 import { EscapeRoomClientStructure } from "./types";
 
 export class EscapeRoomClient implements EscapeRoomClientStructure {
@@ -9,16 +9,25 @@ export class EscapeRoomClient implements EscapeRoomClientStructure {
       throw new Error(`Response status: ${apiResponse}`);
     }
 
-    const escapeRoomDto = (await apiResponse.json()) as {
-      escapeRooms: EscapeRoomDto[];
+    const escapeRoomsApiResponse = (await apiResponse.json()) as {
+      escapeRooms: EscapeRoomApi[];
     };
 
-    const { escapeRooms: escapeRoomsDto } = escapeRoomDto;
+    const { escapeRooms: escapeRoomsApi } = escapeRoomsApiResponse;
 
-    const escapeRooms = escapeRoomsDto.map<EscapeRoom>((escapeRoom) => ({
-      ...escapeRoom,
-      id: escapeRoom._id,
-    }));
+    const escapeRooms = escapeRoomsApi.map<EscapeRoom>((escapeRoom) => {
+      return {
+        id: escapeRoom._id,
+        title: escapeRoom.name,
+        date: escapeRoom.date,
+        rating: escapeRoom.rating,
+        smallImage: escapeRoom.smallImageUrl,
+        bigImage: escapeRoom.detailImageUrl,
+        alternativeText: escapeRoom.alternativeText,
+        place: escapeRoom.location,
+        description: escapeRoom.content,
+      };
+    });
 
     return escapeRooms;
   };
