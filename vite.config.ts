@@ -10,8 +10,8 @@ export default defineConfig({
     setupFiles: ["./src/setupTests.ts"],
     environment: "jsdom",
     coverage: {
-      include: ["src/**/*.ts", "src/**/*.tsx"],
-      exclude: ["src/main.tsx", "src/vite-env.d.ts"],
+      include: ["src/**/*.{ts,tsx}"],
+      exclude: ["src/main.tsx", "src/vite-env.d.ts", "src/**/types.ts"],
       reporter: ["text", "json", "lcov"],
     },
   },
