@@ -2,6 +2,7 @@ import { EscapeRoomClient } from "../../api/EscapeRoomClient";
 import useAppStore from "../../../store/useAppStore";
 import { useEffect, useMemo } from "react";
 import EscapeRoomList from "../../components/EscapeRoomList/EscapeRoomList";
+import Spinner from "../../../components/ColorRing/Spinner";
 import "./EscapeRoomListPage.css";
 
 const EscapeRoomListPage = (): React.ReactElement => {
@@ -31,7 +32,9 @@ const EscapeRoomListPage = (): React.ReactElement => {
     <main>
       <h1 className="main-title">Listado de escape rooms</h1>
       {isLoading ? (
-        <h2>Cargando contenido..</h2>
+        <div className="spinner">
+          <Spinner />
+        </div>
       ) : (
         escapeRooms.length > 0 && <EscapeRoomList escapeRooms={escapeRooms} />
       )}
