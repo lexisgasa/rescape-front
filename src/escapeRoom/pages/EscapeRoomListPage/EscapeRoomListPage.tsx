@@ -1,7 +1,7 @@
 import { EscapeRoomClient } from "../../api/EscapeRoomClient";
 import useAppStore from "../../../store/useAppStore";
 import { useEffect, useMemo } from "react";
-import EscapeRoomCard from "../../components/EscapeRoomCard";
+import EscapeRoomCard from "../../components/EscapeRoomCard/EscapeRoomCard";
 import "./EscapeRoomListPage.css";
 
 const EscapeRoomListPage = (): React.ReactElement => {

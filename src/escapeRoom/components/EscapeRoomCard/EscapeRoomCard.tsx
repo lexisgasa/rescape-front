@@ -1,5 +1,5 @@
 import { FaTrashCan } from "react-icons/fa6";
-import { EscapeRoom } from "../types";
+import { EscapeRoom } from "../../types";
 
 interface EscapeRoomProps {
   escapeRoom: EscapeRoom;
