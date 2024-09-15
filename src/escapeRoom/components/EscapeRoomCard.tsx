@@ -6,11 +6,11 @@ interface EscapeRoomProps {
 }
 
 const EscapeRoomCard = ({
-  escapeRoom: { title, place, bigImage, alternativeText, description },
+  escapeRoom: { title, place, smallImage, alternativeText, description },
 }: EscapeRoomProps): React.ReactElement => {
   return (
     <article className="card">
-      <img src={bigImage} alt={alternativeText} height={125} width={125} />
+      <img src={smallImage} alt={alternativeText} height={125} width={125} />
       <div>
         <span>{place}</span>
         <h2>{title}</h2>
