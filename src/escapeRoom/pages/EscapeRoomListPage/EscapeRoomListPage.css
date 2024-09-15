@@ -15,3 +15,10 @@
   color: var(--main-color);
   height: 32px;
 }
+
+.spinner {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
