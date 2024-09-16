@@ -2,7 +2,7 @@ import { EscapeRoomClient } from "../../api/EscapeRoomClient";
 import useAppStore from "../../../store/useAppStore";
 import { useEffect, useMemo } from "react";
 import EscapeRoomList from "../../components/EscapeRoomList/EscapeRoomList";
-import Spinner from "../../../components/ColorRing/Spinner";
+import Spinner from "../../../components/Spinner/Spinner";
 import "./EscapeRoomListPage.css";
 
 const EscapeRoomListPage = (): React.ReactElement => {
