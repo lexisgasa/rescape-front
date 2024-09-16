@@ -3,20 +3,22 @@ import EscapeRoomCard from "./EscapeRoomCard";
 import { EscapeRoom } from "../../types";
 
 describe("Given the component EscapeRoomCard", () => {
-  describe("When it receives an escape room with the title 'Outline'", () => {
-    test("Then it should the escape room's title 'Outline' inside a heading", () => {
-      const escapeRoom: EscapeRoom = {
-        id: "",
-        title: "Outline",
-        alternativeText: "",
-        smallImage: "",
-        bigImage: "",
-        date: new Date(),
-        description: "",
-        place: "",
-        rating: 5,
-      };
-      const escapeRoomHeadingText = "Outline";
+  const escapeRoom: EscapeRoom = {
+    id: "",
+    title: "White chapel",
+    alternativeText: "",
+    smallImage: "",
+    bigImage: "",
+    date: new Date(),
+    description:
+      "En 1888, Jack el Destripador sembró el terror en el barrio londinense de Whitechapel, dejando tras de sí una estela de misterio y miedo.",
+    place: "",
+    rating: 5,
+  };
+
+  describe("When it receives an escape room with the title 'White chapel'", () => {
+    test("Then it should show the escape room's title 'White chapel' inside a heading", () => {
+      const escapeRoomHeadingText = "White chapel";
       const escapeRoomHeadingTextRegex = new RegExp(escapeRoomHeadingText, "i");
 
       render(<EscapeRoomCard escapeRoom={escapeRoom} />);
@@ -26,6 +28,25 @@ describe("Given the component EscapeRoomCard", () => {
       });
 
       expect(escapeRoomHeading).toBeInTheDocument();
+    });
+  });
+
+  describe("When it receives an escape room with the description 'En 1888, Jack el Destripador sembró el terror en el barrio londinense de Whitechapel, dejando tras de sí una estela de misterio y miedo.' ", () => {
+    test("Then it should show the escape room's description 'En 1888, Jack el Destripador sembró el terror en el barrio londinense de Whitechapel, deja...'", () => {
+      const escapeRoomDescriptionText =
+        "En 1888, Jack el Destripador sembró el terror en el barrio londinense de Whitechapel, deja...";
+      const escapeRoomDescriptionTextRegex = new RegExp(
+        escapeRoomDescriptionText,
+        "i",
+      );
+
+      render(<EscapeRoomCard escapeRoom={escapeRoom} />);
+
+      const escapeRoomDescription = screen.getByText(
+        escapeRoomDescriptionTextRegex,
+      );
+
+      expect(escapeRoomDescription).toBeInTheDocument();
     });
   });
 });
