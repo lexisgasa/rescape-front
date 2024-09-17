@@ -1,13 +1,15 @@
 import { EscapeRoomClient } from "../../api/EscapeRoomClient";
-import useAppStore from "../../../store/useAppStore";
+import useEscapeRoomsStore from "../../../store/useEscapeRoomsStore";
 import { useEffect, useMemo } from "react";
 import EscapeRoomList from "../../components/EscapeRoomList/EscapeRoomList";
 import Spinner from "../../../components/Spinner/Spinner";
+import useIsLoadingStore from "../../../store/useisLoadingStore";
 import "./EscapeRoomListPage.css";
 
 const EscapeRoomListPage = (): React.ReactElement => {
-  const { escapeRooms, loadEscapeRoom, isLoading, setIsLoading } =
-    useAppStore();
+  const { escapeRooms, loadEscapeRoom } = useEscapeRoomsStore();
+
+  const { isLoading, setIsLoading } = useIsLoadingStore();
 
   const escapeRoomClient = useMemo(() => new EscapeRoomClient(), []);
 
