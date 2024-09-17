@@ -7,20 +7,20 @@ interface EscapeRoomProps {
 }
 
 const EscapeRoomCard = ({
-  escapeRoom: { title, place, smallImage, alternativeText, description },
+  escapeRoom: { name, location, smallImageUrl, alternativeText, content },
 }: EscapeRoomProps): React.ReactElement => {
   const maximumCharacters = 100;
 
   return (
     <article className="card">
-      <img src={smallImage} alt={alternativeText} height={125} width={125} />
+      <img src={smallImageUrl} alt={alternativeText} height={125} width={125} />
       <div>
-        <span>{place}</span>
-        <h2>{title}</h2>
+        <span>{location}</span>
+        <h2>{name}</h2>
         <p>
-          {description && description.length > maximumCharacters
-            ? `${description.slice(0, 90)}...`
-            : description}
+          {content && content.length > maximumCharacters
+            ? `${content.slice(0, 90)}...`
+            : content}
         </p>
       </div>
       <button className="card__button">
