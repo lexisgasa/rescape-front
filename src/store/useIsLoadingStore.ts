@@ -12,4 +12,5 @@ const useIsLoadingStore = create<loadingStoreStructure>((set) => ({
       isLoading: load,
     })),
 }));
+
 export default useIsLoadingStore;

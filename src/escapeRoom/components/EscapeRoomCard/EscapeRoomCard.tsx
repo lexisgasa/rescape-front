@@ -23,7 +23,7 @@ const EscapeRoomCard = ({
             : content}
         </p>
       </div>
-      <button className="card__button">
+      <button className="card__button" aria-label="Delete escape room">
         <FaTrashCan className="garbage-can" />
       </button>
     </article>

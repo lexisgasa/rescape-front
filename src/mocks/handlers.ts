@@ -2,7 +2,7 @@ import { http, HttpResponse } from "msw";
 import { EscapeRoom } from "../escapeRoom/types";
 
 export const handlers = [
-  http.get(`${import.meta.env.VITE_API_URL}list`, () => {
+  http.get(`${import.meta.env.VITE_API_URL}escaperooms`, () => {
     return HttpResponse.json<{ escapeRooms: EscapeRoom[] }>({
       escapeRooms: [
         {

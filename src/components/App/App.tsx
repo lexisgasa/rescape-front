@@ -6,7 +6,9 @@ const App = (): React.ReactElement => {
   return (
     <div className="container">
       <Header />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 };
