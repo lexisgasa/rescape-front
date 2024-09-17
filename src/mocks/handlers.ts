@@ -2,41 +2,41 @@ import { http, HttpResponse } from "msw";
 import { EscapeRoom } from "../escapeRoom/types";
 
 export const handlers = [
-  http.get(`${import.meta.env.VITE_API_URL}list`, () => {
+  http.get(`${import.meta.env.VITE_API_URL}escaperooms`, () => {
     return HttpResponse.json<{ escapeRooms: EscapeRoom[] }>({
       escapeRooms: [
         {
           id: "1",
-          title: "",
+          name: "",
           date: new Date(),
           rating: 1,
-          smallImage: "",
-          bigImage: "",
+          smallImageUrl: "",
+          detailImageUrl: "",
           alternativeText: "",
-          place: "",
-          description: "",
+          location: "",
+          content: "",
         },
         {
           id: "2",
-          title: "",
+          name: "",
           date: new Date(),
           rating: 1,
-          smallImage: "",
-          bigImage: "",
+          smallImageUrl: "",
+          detailImageUrl: "",
           alternativeText: "",
-          place: "",
-          description: "",
+          location: "",
+          content: "",
         },
         {
           id: "3",
-          title: "",
+          name: "",
           date: new Date(),
           rating: 1,
-          smallImage: "",
-          bigImage: "",
+          smallImageUrl: "",
+          detailImageUrl: "",
           alternativeText: "",
-          place: "",
-          description: "",
+          location: "",
+          content: "",
         },
       ],
     });

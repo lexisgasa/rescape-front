@@ -3,7 +3,9 @@ import { EscapeRoomClientStructure } from "./types";
 
 export class EscapeRoomClient implements EscapeRoomClientStructure {
   getEscapeRooms = async (): Promise<EscapeRoom[]> => {
-    const apiResponse = await fetch(`${import.meta.env.VITE_API_URL}list`);
+    const apiResponse = await fetch(
+      `${import.meta.env.VITE_API_URL}escaperooms`,
+    );
 
     if (!apiResponse.ok) {
       throw new Error(`Response status: ${apiResponse}`);
@@ -17,15 +19,8 @@ export class EscapeRoomClient implements EscapeRoomClientStructure {
 
     const escapeRooms = escapeRoomsApi.map<EscapeRoom>((escapeRoom) => {
       return {
+        ...escapeRoom,
         id: escapeRoom._id,
-        title: escapeRoom.name,
-        date: escapeRoom.date,
-        rating: escapeRoom.rating,
-        smallImage: escapeRoom.smallImageUrl,
-        bigImage: escapeRoom.detailImageUrl,
-        alternativeText: escapeRoom.alternativeText,
-        place: escapeRoom.location,
-        description: escapeRoom.content,
       };
     });
 

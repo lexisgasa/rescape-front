@@ -1,13 +1,15 @@
 import { EscapeRoomClient } from "../../api/EscapeRoomClient";
-import useAppStore from "../../../store/useAppStore";
 import { useEffect, useMemo } from "react";
 import EscapeRoomList from "../../components/EscapeRoomList/EscapeRoomList";
 import Spinner from "../../../components/Spinner/Spinner";
+import useEscapeRoomsStore from "../../../store/useEscapeRoomsStore";
+import useIsLoadingStore from "../../../store/useIsLoadingStore";
 import "./EscapeRoomListPage.css";
 
 const EscapeRoomListPage = (): React.ReactElement => {
-  const { escapeRooms, loadEscapeRoom, isLoading, setIsLoading } =
-    useAppStore();
+  const { escapeRooms, loadEscapeRoom } = useEscapeRoomsStore();
+
+  const { isLoading, setIsLoading } = useIsLoadingStore();
 
   const escapeRoomClient = useMemo(() => new EscapeRoomClient(), []);
 
@@ -29,7 +31,7 @@ const EscapeRoomListPage = (): React.ReactElement => {
   }, [escapeRoomClient, loadEscapeRoom, setIsLoading]);
 
   return (
-    <main>
+    <>
       <h1 className="main-title">Listado de escape rooms</h1>
       {isLoading ? (
         <div className="spinner">
@@ -38,7 +40,7 @@ const EscapeRoomListPage = (): React.ReactElement => {
       ) : (
         escapeRooms.length > 0 && <EscapeRoomList escapeRooms={escapeRooms} />
       )}
-    </main>
+    </>
   );
 };
 

@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { EscapeRoom } from "../../types";
+import { EscapeRoomData } from "../../types";
 import "./EscapeRoomForm.css";
 
 const EscapeRoomForm = (): React.ReactElement => {
-  const [escapeRoomData, setEscapeRoomData] = useState<Omit<EscapeRoom, "id">>({
-    title: "",
-    place: "",
-    smallImage: "",
-    bigImage: "",
+  const [escapeRoomData, setEscapeRoomData] = useState<EscapeRoomData>({
+    name: "",
+    location: "",
+    smallImageUrl: "",
+    detailImageUrl: "",
     alternativeText: "",
     rating: NaN,
-    description: "",
+    content: "",
     date: new Date(),
   });
 
@@ -28,45 +28,45 @@ const EscapeRoomForm = (): React.ReactElement => {
   return (
     <form className="escape-room-form">
       <div className="escape-room-form__form-group">
-        <label htmlFor="title">Nombre del escape room</label>
+        <label htmlFor="name">Nombre del escape room</label>
         <input
           type="text"
-          id="title"
+          id="name"
           className="escape-room-form__text"
-          value={escapeRoomData.title}
+          value={escapeRoomData.name}
           onChange={handleEscapeRoomData}
           required
         />
       </div>
       <div className="escape-room-form__form-group">
-        <label htmlFor="place">Lugar de realización</label>
+        <label htmlFor="location">Lugar de realización</label>
         <input
           type="text"
-          id="place"
+          id="location"
           className="escape-room-form__text"
-          value={escapeRoomData.place}
+          value={escapeRoomData.location}
           onChange={handleEscapeRoomData}
           required
         />
       </div>
       <div className="escape-room-form__form-group">
-        <label htmlFor="smallImage">URL de la imagen</label>
+        <label htmlFor="smallImageUrl">URL de la imagen</label>
         <input
           type="text"
-          id="smallImage"
+          id="smallImageUrl"
           className="escape-room-form__text"
-          value={escapeRoomData.smallImage}
+          value={escapeRoomData.smallImageUrl}
           onChange={handleEscapeRoomData}
           required
         />
       </div>
       <div className="escape-room-form__form-group">
-        <label htmlFor="bigImage">URL de la imagen en detalles</label>
+        <label htmlFor="detailImageUrl">URL de la imagen en detalles</label>
         <input
           type="text"
-          id="bigImage"
+          id="detailImageUrl"
           className="escape-room-form__text"
-          value={escapeRoomData.bigImage}
+          value={escapeRoomData.detailImageUrl}
           onChange={handleEscapeRoomData}
           required
         />
@@ -97,11 +97,11 @@ const EscapeRoomForm = (): React.ReactElement => {
         />
       </div>
       <div className="escape-room-form__form-group">
-        <label htmlFor="description">Descripción</label>
+        <label htmlFor="content">Descripción</label>
         <textarea
-          id="description"
+          id="content"
           className="escape-room-form__text escape-room-form__textarea"
-          value={escapeRoomData.description}
+          value={escapeRoomData.content}
           onChange={handleEscapeRoomData}
           required
         ></textarea>

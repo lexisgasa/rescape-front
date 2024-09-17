@@ -2,18 +2,11 @@ import { create } from "zustand";
 import { EscapeRoom } from "../escapeRoom/types";
 
 interface StoreStructure {
-  isLoading: boolean;
-  setIsLoading: (load: boolean) => void;
   escapeRooms: EscapeRoom[];
   loadEscapeRoom: (escapeRooms: EscapeRoom[]) => void;
 }
 
-const useAppStore = create<StoreStructure>((set) => ({
-  isLoading: false,
-  setIsLoading: (load: boolean) =>
-    set(() => ({
-      isLoading: load,
-    })),
+const useEscapeRoomsStore = create<StoreStructure>((set) => ({
   escapeRooms: [],
   loadEscapeRoom: (escapeRooms: EscapeRoom[]) =>
     set((state) => ({
@@ -22,4 +15,4 @@ const useAppStore = create<StoreStructure>((set) => ({
     })),
 }));
 
-export default useAppStore;
+export default useEscapeRoomsStore;

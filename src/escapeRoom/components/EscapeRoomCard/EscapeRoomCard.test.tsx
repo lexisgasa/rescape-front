@@ -5,14 +5,14 @@ import { EscapeRoom } from "../../types";
 describe("Given the component EscapeRoomCard", () => {
   const escapeRoom: EscapeRoom = {
     id: "",
-    title: "White chapel",
+    name: "White chapel",
     alternativeText: "",
-    smallImage: "",
-    bigImage: "",
+    smallImageUrl: "",
+    detailImageUrl: "",
     date: new Date(),
-    description:
+    content:
       "En 1888, Jack el Destripador sembró el terror en el barrio londinense de Whitechapel, dejando tras de sí una estela de misterio y miedo.",
-    place: "",
+    location: "",
     rating: 5,
   };
 

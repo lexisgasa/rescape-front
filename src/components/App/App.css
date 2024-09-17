@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding: 43px 16px;
 }
+
+.main-title {
+  color: var(--main-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}

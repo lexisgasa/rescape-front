@@ -77,9 +77,3 @@ textarea {
   color: var(--main-color);
   background-color: var(--black);
 }
-
-.main-title {
-  color: var(--main-color);
-  font-size: 1.5rem;
-  font-weight: 700;
-}
