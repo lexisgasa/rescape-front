@@ -9,8 +9,6 @@ describe("Given the Header component", () => {
 
       render(<Header />);
 
-      screen.debug();
-
       const appTitle = screen.getByText(appTitleTextRegex);
 
       expect(appTitle).toBeInTheDocument();
