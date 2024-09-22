@@ -13,7 +13,7 @@ describe("Given the component EscapeRoomCard", () => {
     content:
       "En 1888, Jack el Destripador sembró el terror en el barrio londinense de Whitechapel, dejando tras de sí una estela de misterio y miedo.",
     location: "",
-    rating: 5,
+    rating: "5",
   };
 
   describe("When it receives an escape room with the title 'White chapel'", () => {
