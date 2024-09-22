@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
-interface loadingStoreStructure {
+interface LoadingStoreStructure {
   isLoading: boolean;
   setIsLoading: (load: boolean) => void;
 }
 
-const useIsLoadingStore = create<loadingStoreStructure>((set) => ({
+const useIsLoadingStore = create<LoadingStoreStructure>((set) => ({
   isLoading: false,
   setIsLoading: (load: boolean) =>
     set(() => ({

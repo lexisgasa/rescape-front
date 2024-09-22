@@ -9,7 +9,7 @@ describe("Given the component EscapeRoomList", () => {
         {
           id: "",
           date: new Date(),
-          rating: 5,
+          rating: "5",
           alternativeText: "",
           name: "Profana",
           smallImageUrl: "",
@@ -20,7 +20,7 @@ describe("Given the component EscapeRoomList", () => {
         {
           id: "",
           date: new Date(),
-          rating: 5,
+          rating: "5",
           alternativeText: "",
           name: "Blasphemia",
           smallImageUrl: "",
