@@ -2,31 +2,42 @@ import { useState } from "react";
 import { EscapeRoomData } from "../../types";
 import "./EscapeRoomForm.css";
 
-const EscapeRoomForm = (): React.ReactElement => {
+interface EscapeRoomFormProps {
+  onSubmitEscapeRoom: (escapeRoomFormData: EscapeRoomData) => void;
+}
+
+const EscapeRoomForm = ({
+  onSubmitEscapeRoom,
+}: EscapeRoomFormProps): React.ReactElement => {
   const [escapeRoomData, setEscapeRoomData] = useState<EscapeRoomData>({
     name: "",
     location: "",
     smallImageUrl: "",
     detailImageUrl: "",
     alternativeText: "",
-    rating: NaN,
+    rating: "",
     content: "",
-    date: new Date(),
   });
 
-  const handleEscapeRoomData = (
+  const getEscapeRoomFormData = (
     event:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>,
   ): void => {
+    const { id, value } = event.target;
     setEscapeRoomData((currentEscapeRoom) => ({
       ...currentEscapeRoom,
-      [event.target.id]: event.target.value,
+      [id]: value,
     }));
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    onSubmitEscapeRoom(escapeRoomData);
+  };
+
   return (
-    <form className="escape-room-form">
+    <form className="escape-room-form" onSubmit={handleSubmit}>
       <div className="escape-room-form__form-group">
         <label htmlFor="name">Nombre del escape room</label>
         <input
@@ -34,7 +45,7 @@ const EscapeRoomForm = (): React.ReactElement => {
           id="name"
           className="escape-room-form__text"
           value={escapeRoomData.name}
-          onChange={handleEscapeRoomData}
+          onChange={getEscapeRoomFormData}
           required
         />
       </div>
@@ -45,7 +56,7 @@ const EscapeRoomForm = (): React.ReactElement => {
           id="location"
           className="escape-room-form__text"
           value={escapeRoomData.location}
-          onChange={handleEscapeRoomData}
+          onChange={getEscapeRoomFormData}
           required
         />
       </div>
@@ -56,7 +67,7 @@ const EscapeRoomForm = (): React.ReactElement => {
           id="smallImageUrl"
           className="escape-room-form__text"
           value={escapeRoomData.smallImageUrl}
-          onChange={handleEscapeRoomData}
+          onChange={getEscapeRoomFormData}
           required
         />
       </div>
@@ -67,7 +78,7 @@ const EscapeRoomForm = (): React.ReactElement => {
           id="detailImageUrl"
           className="escape-room-form__text"
           value={escapeRoomData.detailImageUrl}
-          onChange={handleEscapeRoomData}
+          onChange={getEscapeRoomFormData}
           required
         />
       </div>
@@ -78,7 +89,7 @@ const EscapeRoomForm = (): React.ReactElement => {
           id="alternativeText"
           className="escape-room-form__text"
           value={escapeRoomData.alternativeText}
-          onChange={handleEscapeRoomData}
+          onChange={getEscapeRoomFormData}
           required
         />
       </div>
@@ -88,11 +99,11 @@ const EscapeRoomForm = (): React.ReactElement => {
           type="number"
           id="rating"
           placeholder="Número entero del 1 al 5"
+          className="escape-room-form__text"
           min={1}
           max={5}
-          className="escape-room-form__text"
           value={escapeRoomData.rating}
-          onChange={handleEscapeRoomData}
+          onChange={getEscapeRoomFormData}
           required
         />
       </div>
@@ -102,7 +113,7 @@ const EscapeRoomForm = (): React.ReactElement => {
           id="content"
           className="escape-room-form__text escape-room-form__textarea"
           value={escapeRoomData.content}
-          onChange={handleEscapeRoomData}
+          onChange={getEscapeRoomFormData}
           required
         ></textarea>
       </div>

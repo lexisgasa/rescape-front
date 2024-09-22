@@ -11,8 +11,9 @@ describe("Given the component EscapeRoomForm", () => {
       const ratingFieldTextRegex = new RegExp(ratingFieldText, "i");
       const descriptionFieldText = "Descripción";
       const descriptionFieldTextRegex = new RegExp(descriptionFieldText, "i");
+      const onSubmitEscapeRoomMock = vi.fn();
 
-      render(<EscapeRoomForm />);
+      render(<EscapeRoomForm onSubmitEscapeRoom={onSubmitEscapeRoomMock} />);
 
       const nameField = screen.getByLabelText(nameFieldTextRegex);
       const ratingField = screen.getByLabelText(ratingFieldTextRegex);
@@ -30,8 +31,9 @@ describe("Given the component EscapeRoomForm", () => {
       const nameFieldText = "Nombre del escape room";
       const nameFieldTextRegex = new RegExp(nameFieldText, "i");
       const expectedNameFieldValue = "Posesion";
+      const onSubmitEscapeRoomMock = vi.fn();
 
-      render(<EscapeRoomForm />);
+      render(<EscapeRoomForm onSubmitEscapeRoom={onSubmitEscapeRoomMock} />);
 
       const nameField = screen.getByLabelText(nameFieldTextRegex);
 
@@ -47,8 +49,9 @@ describe("Given the component EscapeRoomForm", () => {
       const ratingFieldText = "Valoración";
       const ratingFieldTextRegex = new RegExp(ratingFieldText, "i");
       const expectedRatingFieldValue = 4;
+      const onSubmitEscapeRoomMock = vi.fn();
 
-      render(<EscapeRoomForm />);
+      render(<EscapeRoomForm onSubmitEscapeRoom={onSubmitEscapeRoomMock} />);
 
       const ratingField = screen.getByLabelText(ratingFieldTextRegex);
 
@@ -65,8 +68,9 @@ describe("Given the component EscapeRoomForm", () => {
       const descriptionFieldTextRegex = new RegExp(descriptionFieldText, "i");
       const expectedDescriptionFieldValue =
         "Un escape room muy bien ambientado";
+      const onSubmitEscapeRoomMock = vi.fn();
 
-      render(<EscapeRoomForm />);
+      render(<EscapeRoomForm onSubmitEscapeRoom={onSubmitEscapeRoomMock} />);
 
       const descriptionField = screen.getByLabelText(descriptionFieldTextRegex);
 

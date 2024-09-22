@@ -1,4 +1,4 @@
-import { EscapeRoom, EscapeRoomApi } from "../types";
+import { EscapeRoom, EscapeRoomApi, EscapeRoomData } from "../types";
 import { EscapeRoomClientStructure } from "./types";
 
 export class EscapeRoomClient implements EscapeRoomClientStructure {
@@ -21,9 +21,30 @@ export class EscapeRoomClient implements EscapeRoomClientStructure {
       return {
         ...escapeRoom,
         id: escapeRoom._id,
+        date: escapeRoom.createdAt,
       };
     });
 
     return escapeRooms;
+  };
+
+  createEscapeRoom = async (
+    escapeRoom: EscapeRoomData,
+  ): Promise<EscapeRoomData> => {
+    const request = await fetch(`${import.meta.env.VITE_API_URL}escaperooms`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(escapeRoom),
+    });
+
+    if (!request.ok) {
+      throw new Error("There was an error sending the post");
+    }
+
+    const newEscapeRoom = (await request.json()) as EscapeRoomData;
+
+    return newEscapeRoom;
   };
 }
