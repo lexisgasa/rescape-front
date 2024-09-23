@@ -43,7 +43,7 @@ describe("Given the component EscapeRoomForm", () => {
     });
   });
 
-  describe("When te user enters '4' in 'Valoración' field", () => {
+  describe("When the user enters '4' in 'Valoración' field", () => {
     test("Then it should show '4' inside the field", async () => {
       const user = userEvent.setup();
       const ratingFieldText = "Valoración";
@@ -61,8 +61,8 @@ describe("Given the component EscapeRoomForm", () => {
     });
   });
 
-  describe("When te user enters 'Un escape room muy bien ambientado' in 'Descripción' field", () => {
-    test("Then it should show 'Un escape room muy bien ambiento' inside the field", async () => {
+  describe("When the user enters 'Un escape room muy bien ambientado' in 'Descripción' field", () => {
+    test("Then it should show 'Un escape room muy bien ambientado' inside the field", async () => {
       const user = userEvent.setup();
       const descriptionFieldText = "Descripción";
       const descriptionFieldTextRegex = new RegExp(descriptionFieldText, "i");
@@ -77,6 +77,23 @@ describe("Given the component EscapeRoomForm", () => {
       await user.type(descriptionField, "Un escape room muy bien ambientado");
 
       expect(descriptionField).toHaveValue(expectedDescriptionFieldValue);
+    });
+  });
+
+  describe("When the user clicks in 'crear' button", () => {
+    test("Then it should trigger the received action", async () => {
+      const user = userEvent.setup();
+      const onSubmitEscapeRoomMock = vi.fn();
+
+      render(<EscapeRoomForm onSubmitEscapeRoom={onSubmitEscapeRoomMock} />);
+
+      const createEscapeRoomButton = screen.getByRole("button", {
+        name: /crear/i,
+      });
+
+      await user.click(createEscapeRoomButton);
+
+      expect(onSubmitEscapeRoomMock).toHaveBeenCalled();
     });
   });
 });
